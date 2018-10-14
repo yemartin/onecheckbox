@@ -1,0 +1,59 @@
+.onecheckbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 13px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.onecheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.onecheckbox input ~ span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 14px;
+  width: 14px;
+  background-color: #CCC;
+  border-radius: 5px;
+  border: 2px solid #666;
+}
+
+.onecheckbox:hover input ~ span {
+  background-color: #FFEB3B;
+}
+
+.onecheckbox input ~ span:after {
+  content: "✔︎";
+  display: none;
+  color: #4CAF50;
+  font-size: 25px;
+  position: relative;
+  top: -8px;
+  left: 0px;
+}
+
+.onecheckbox input:active ~ span,
+.onecheckbox input:checked ~ span
+{
+  background-color: #FFF;
+}
+
+.onecheckbox input:checked ~ span:after {
+  display: block;
+}
+
+.onecheckbox input:active ~ span:after {
+  color: #BBB;
+}
