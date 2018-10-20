@@ -10,10 +10,7 @@ function constructOptions() {
       removeButton.remove()
       chrome.runtime.sendMessage(chrome.runtime.id, {
         action: "reset"
-      }, function(response) {
-        console.log(response)
       })
-      console.log("Sent message")
       buttonDiv.innerHTML = "Done!"
     })
     removeButton.innerHTML = "Remove All Data"

@@ -2,7 +2,7 @@
 // to get access to its Javascript context for data extraction.
 
 function injectCode(code) {
-  var script = document.createElement("script")
+  let script = document.createElement("script")
   script.textContent = code
   ;(document.head||document.documentElement).appendChild(script)
   script.remove()

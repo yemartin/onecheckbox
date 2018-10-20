@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener((request, sender, respond) => {
     case "reset":
       storage.clear()
       chrome.tabs.query({}, function(tabs) {
-        for (var i=0; i<tabs.length; ++i) {
+        for (let i=0; i<tabs.length; ++i) {
           chrome.tabs.sendMessage(tabs[i].id, {action: "reset"});
         }
       });

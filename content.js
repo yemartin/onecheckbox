@@ -6,7 +6,7 @@ function checkboxifyAll() {
 
 function forEachHomeworksItemDiv(callback) {
   homeworksContents().forEach((homeworksContent) => {
-    var index = 0
+    let index = 0
     homeworksContentDivs(homeworksContent).forEach((homeworksContentDiv) => {
       homeworksItemDivs(homeworksContentDiv).forEach((homeworksItemDiv) => {
         callback(homeworksItemDiv, index)
@@ -58,7 +58,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 let MutationObserver = window.MutationObserver || window.WebKitMutationObserver
-let observer = new MutationObserver((mutations, observer) =>{
+let observer = new MutationObserver((mutations, observer) => {
   checkboxifyAll()
 })
 observer.observe(document, {childList: true, subtree: true})
