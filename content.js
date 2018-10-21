@@ -19,7 +19,7 @@ function homeworksContents() {
 }
 
 function homeworksItemDivs(homeworksContent) {
-  let divs = homeworksContent.querySelectorAll("div")
+  let divs = homeworksContent.querySelectorAll("div, p")
   return Array.from(divs).filter(div => checkboxifiable(div))
 }
 
@@ -28,7 +28,7 @@ function checkboxifiable(div) {
 }
 
 function isLeaf(div) {
-  return div.querySelectorAll("div").length == 0
+  return div.querySelectorAll("div, p").length == 0
 }
 
 // alphanum: 0-9a-zA-Z
